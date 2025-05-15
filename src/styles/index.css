@@ -1,1 +1,63 @@
 @import "./components/card";
+
+:root {
+  --color-primary: salmon;
+  --color-secondary: rgb(248, 244, 244); /* Couleur de fond du body */
+  --color-tertiary:rgb(245, 242, 250);; /* Couleur de fond input, card, form */
+  --color-quaternary:rgb(61, 61, 61); /* Couleur p, instructions */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-secondary);
+}
+form {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-tertiary);
+  padding: 6px 20px;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.054);
+}
+input {
+  border: 1px solid var(--color-tertiary);
+  background: var(--color-secondary);
+  color: var(--color-quaternary);
+  outline: none;
+  border-radius: 5px;
+  height: 30px;
+  margin: 10px 0 5px;
+  width: 270px;
+  font-size: 1.2rem;
+  transition: 0.2s;
+}
+input:focus {
+  border: 1px solid var(--color-primary);
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 110px;
+}
+.cards-container > li {
+  flex: 1 0 20%;
+  /* height: 600px; */
+  height: 600px; 
+  min-width: 280px;
+  background: var(--color-tertiary);
+  margin: 10px;
+  border-radius: 15px;
+  border: 3px solid var(--color-primary);
+  padding: 10px 20px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.084);
+}
