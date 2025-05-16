@@ -8,9 +8,9 @@ import Home from "./pages/home";
 const App = () => {
   const [meals, setMeals] = useState([]); // On créer une variable pour stocker les données de l'API dans un tableau
 
-  const getData = () => {
+  const getData = (search) => {
     axios
-      .get("https://www.themealdb.com/api/json/v1/1/search.php?s")
+      .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
       .then((res) => {
         console.log(res.data.meals);
         // On va chercher les données du serveur puis on les stocke dans une variable (blogData)
