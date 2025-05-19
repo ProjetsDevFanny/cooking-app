@@ -3,12 +3,12 @@ import Title from "../components/Title";
 import Search from "../components/Search";
 import Cardcontainer from "../components/Cardcontainer";
 
-const Home = ({ meals, loading }) => {
+const Home = ({ meals, getData, isLoading }) => {
   return (
     <div>
       <Title />
-      <Search />
-      <Cardcontainer meals={meals} />
+      <Search getData={getData} />
+      <Cardcontainer meals={meals} isLoading={isLoading} />
     </div>
   );
 };
