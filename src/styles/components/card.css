@@ -1,9 +1,14 @@
-
 h2 {
   margin: 6px auto;
-  padding: 20px 0;
+  padding: 20px 0; /* padding haut et bas constant */
   color: var(--color-primary);
-  font-size: 2rem;
+  width: 100%;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  overflow: hidden; /* seulement si tu veux cacher le texte long */
+  text-overflow: ellipsis;
+  transition: all 1.5s ease;
+  max-height: 2.6em; /* limite visuelle pour une ligne */
 }
 p {
   color: var(--color-quaternary);
@@ -27,10 +32,17 @@ img {
   padding: 10px;
   text-align: justify;
   font-size: 0.8rem;
-  color:var(--color-quaternary);
+  color: var(--color-quaternary);
 }
 
 li > ul > li {
   text-align: center;
-  
+}
+
+h2:hover {
+  cursor: pointer;
+  text-overflow: clip; /* optionnel : montre tout le texte */
+  white-space: normal; /* permet le retour à la ligne si besoin */
+  overflow: visible;
+  max-height: 200px; /* assez grand pour afficher le texte complet */
 }

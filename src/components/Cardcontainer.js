@@ -28,9 +28,11 @@ const Cardcontainer = ({ meals, isLoading }) => {
   // Si des repas sont trouvés, on les affiche
   return (
     <ul className="cards-container">
-      {meals.map((meal) => (
-        <Card meal={meal} key={meal.idMeal} />
-      ))}
+      {meals
+        // .slice(0, 24)
+        .map((meal) => (
+          <Card meal={meal} key={meal.idMeal} />
+        ))}
     </ul>
   );
 };

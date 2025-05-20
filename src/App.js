@@ -8,7 +8,8 @@ import Home from "./pages/home";
 const App = () => {
   const [meals, setMeals] = useState([]); // On créer une variable pour stocker les données de l'API dans un tableau
   const [isLoading, setIsLoading] = useState(true);
-
+  // const [inputSearch, setInputSearch] = useState("");
+  
   const getData = (search) => {
     setIsLoading(true);
     axios
@@ -19,7 +20,7 @@ const App = () => {
         // On va chercher les données du serveur puis on les stocke dans une variable (<meals></meals>)
         // On utilise la méthode setMeals pour mettre à jour le state
         setMeals(res.data.meals);
-        setIsLoading(false);
+        setIsLoading(false); // On met à jour le state pour indiquer que les données sont chargées
       })
       .catch((error) => {
         console.error("Erreur API :", error);
@@ -28,7 +29,23 @@ const App = () => {
   };
 
   // UseEffect (quand le composant est appelé) => on va chercher les données ([] =  callback)
-  useEffect(() => getData(""), []);
+  useEffect(() => getData(""), []); // le callback est une fonction qui va être appelée lorsque le composant est monté (tu te joue qu'une fois)
+
+
+  // Autre façon d'écrire :
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputSearch}` )
+  //     .then((res) => {
+  //         console.log(res.data.meals);
+  //         setMeals(res.data.meals);
+  //         setIsLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Erreur API :", error);
+  //       setIsLoading(false);
+  //     });
+  // }, [inputSearch]); => On met l'inputSearch dans le tableau de dépendances pour que le useEffect soit exécuté à chaque fois que la valeur de inputSearch change (on le met dans le callback)
 
   return (
     <BrowserRouter>

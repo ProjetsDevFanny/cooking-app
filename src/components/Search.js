@@ -21,6 +21,7 @@ const Search = ({ getData }) => {
           placeholder="Entrez le nom d'un aliment (en anglais)"
           value={searchTerm}
           onChange={handleSearch}
+          // onChange={(e) => setSearchTerm(e.target.value)} autre façon de faire
         />
       </form>
       <ul id="result"></ul>
