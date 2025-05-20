@@ -49,7 +49,7 @@ L'application sera accessible à l'adresse `http://localhost:3000`
 
 ## 🎥 Démo
 
-[Insérer le lien vers votre démo ici]
+https://cooking-app-fanny.netlify.app/
 
 ## 📁 Structure du projet
 
